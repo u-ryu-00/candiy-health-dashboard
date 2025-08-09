@@ -2,6 +2,9 @@ name: CI
 
 on: [pull_request]
 
+env:
+    NEXT_PUBLIC_CANDIY_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_CANDIY_API_BASE_URL }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
