@@ -14,20 +14,23 @@ const Container = styled.div`
 
 const Content = styled.div`
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
   padding: 4.8rem 1.6rem;
   min-width: ${({ theme }) => theme.layout.mobileMinWidth};
   max-width: ${({ theme }) => theme.layout.contentWidth};
   background: ${({ theme }) => theme.color.background};
+  overflow-y: auto;
 `;
 
 type LayoutProps = HTMLAttributes<Element>;
 
-export default function Layout({
-  children, className,
-}: LayoutProps) {
+export default function Layout({ children }: LayoutProps) {
   return (
     <Container>
-      <Content className={className}>
+      <Content>
         {children}
       </Content>
     </Container>
