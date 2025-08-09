@@ -40,10 +40,14 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.2.1",
+    "dayjs": "^1.11.13",
     "next": "^13.4.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.62.0",
     "styled-components": "^5.3.10",
-    "styled-reset": "^4.4.7"
+    "styled-reset": "^4.4.7",
+    "zod": "^4.0.15"
   }
 }
