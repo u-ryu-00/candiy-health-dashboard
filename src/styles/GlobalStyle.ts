@@ -36,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   :lang(ko) {
-    h1, h2, h3 {
+    * {
       word-break: keep-all;
     }
   }

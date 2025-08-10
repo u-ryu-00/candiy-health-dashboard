@@ -51,7 +51,11 @@ const ResultLabel = styled.dt`
 `;
 
 const ResultValue = styled.dd`
-  font-weight: 400;
+  font-weight: 500;
+
+  span {
+    font-size: 1.4rem;
+  }
 `;
 
 const Evaluation = styled.div`
@@ -94,10 +98,11 @@ const Status = styled.span<StatusProps>`
 
 type ResultDashboardProps = {
   checkupResultData: CheckupResultData;
-}
+};
 
 export default function ResultDashboard({ checkupResultData }: ResultDashboardProps) {
   const sortedOverviewList = sortOverviewListByDate(checkupResultData.overviewList);
+  const unit = checkupResultData.referenceList.find((reference) => reference.refType === '단위');
 
   const getEvaluationStatus = (evaluation: string) => {
     if (evaluation === '정A') {
@@ -125,23 +130,36 @@ export default function ResultDashboard({ checkupResultData }: ResultDashboardPr
               <ResultLabel>키/몸무게</ResultLabel>
               <ResultValue>
                 {overview.height}
-                cm /
                 {' '}
+                <span>{unit?.height}</span>
+                {' / '}
                 {overview.weight}
-                kg
+                <span>{unit?.weight}</span>
               </ResultValue>
             </ResultItem>
             <ResultItem>
               <ResultLabel>BMI 수치</ResultLabel>
-              <ResultValue>{overview.BMI}</ResultValue>
+              <ResultValue>
+                {overview.BMI}
+                {' '}
+                <span>{unit?.BMI}</span>
+              </ResultValue>
             </ResultItem>
             <ResultItem>
               <ResultLabel>혈압 (수축기/이완기)</ResultLabel>
-              <ResultValue>{overview.bloodPressure}</ResultValue>
+              <ResultValue>
+                {overview.bloodPressure}
+                {' '}
+                <span>{unit?.bloodPressure}</span>
+              </ResultValue>
             </ResultItem>
             <ResultItem>
               <ResultLabel>식전혈당</ResultLabel>
-              <ResultValue>{overview.fastingBloodGlucose}</ResultValue>
+              <ResultValue>
+                {overview.fastingBloodGlucose}
+                {' '}
+                <span>{unit?.fastingBloodGlucose}</span>
+              </ResultValue>
             </ResultItem>
           </ResultList>
           <Evaluation>
