@@ -6,7 +6,7 @@ export type ResultInquiryForm = {
   loginTypeLevel: string;
   startDate: string;
   endDate: string;
-}
+};
 
 export type AuthPayload = {
   id: string;
@@ -18,7 +18,7 @@ export type AuthPayload = {
   startDate: string;
   endDate: string;
   inquiryType: string;
-}
+};
 
 export type CheckupResultPayload = AuthPayload & {
   isContinue: string;
@@ -27,12 +27,25 @@ export type CheckupResultPayload = AuthPayload & {
     threadIndex: number;
     transactionId: string;
     multiFactorTimestamp: number;
-  }
-}
+  };
+};
+
+export type OverviewList = Record<string, any>[];
+
+export type ReferenceList = Record<string, any>[];
+
+export type ResultList = Record<string, any>[];
 
 export type CheckupResultData = {
   patientName: string;
-  overviewList: Record<string, any>[];
-  referenceList: Record<string, any>[];
-  resultList: Record<string, any>[];
+  overviewList: OverviewList;
+  referenceList: ReferenceList;
+  resultList: ResultList;
+};
+
+export const EVALUATION_STATUS = {
+  normal: '정상',
+  warning: '주의',
+  danger: '의심',
+  other: '기타',
 };
