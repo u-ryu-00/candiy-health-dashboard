@@ -23,6 +23,11 @@ const Content = styled.div`
   max-width: ${({ theme }) => theme.layout.contentWidth};
   background: ${({ theme }) => theme.color.background};
   overflow-y: auto;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    gap: ${({ theme }) => theme.remToVw(2.4)};
+    padding: ${({ theme }) => theme.remToVw(4.8)} ${({ theme }) => theme.remToVw(1.6)};
+  }
 `;
 
 type LayoutProps = HTMLAttributes<Element>;

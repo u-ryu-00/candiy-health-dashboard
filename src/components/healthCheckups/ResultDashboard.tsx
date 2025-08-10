@@ -12,6 +12,7 @@ const Container = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
     grid-template-columns: 1fr;
+    gap: ${({ theme }) => theme.remToVw(1)};
   }
 `;
 
@@ -26,6 +27,12 @@ const Card = styled.div`
   width: 100%;
   color: ${({ theme }) => theme.color.textDark};
   background: ${({ theme }) => theme.color.backgroundLight};
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    font-size: ${({ theme }) => theme.remToVw(1.6)};
+    gap: ${({ theme }) => theme.remToVw(1)};
+    padding: ${({ theme }) => theme.remToVw(1.6)};
+  }
 `;
 
 const CheckupDate = styled.span`
@@ -39,11 +46,19 @@ const ResultList = styled.dl`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    gap: ${({ theme }) => theme.remToVw(1)};
+  }
 `;
 
 const ResultItem = styled.div`
   display: flex;
   gap: .8rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    gap: ${({ theme }) => theme.remToVw(0.8)};
+  }
 `;
 
 const ResultLabel = styled.dt`
@@ -55,6 +70,12 @@ const ResultValue = styled.dd`
 
   span {
     font-size: 1.4rem;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    span {
+      font-size: ${({ theme }) => theme.remToVw(1.4)};
+    }
   }
 `;
 
@@ -94,6 +115,12 @@ const Status = styled.span<StatusProps>`
   ${({ status }) => status === EVALUATION_STATUS.other && css`
     background: ${({ theme }) => theme.color.background};
   `}
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    font-size: ${({ theme }) => theme.remToVw(1.4)};
+    width: ${({ theme }) => theme.remToVw(4.8)};
+    height: ${({ theme }) => theme.remToVw(4.8)};
+  }
 `;
 
 type ResultDashboardProps = {

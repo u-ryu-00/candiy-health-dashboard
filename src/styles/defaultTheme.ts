@@ -1,3 +1,8 @@
+function remToVw(remValue: number) {
+  const calculated = ((remValue * 10) / 375) * 100;
+  return `${Math.round(calculated * 100) / 100}vw`;
+}
+
 const defaultTheme = {
   color: {
     primary: '#7164CA',
@@ -24,6 +29,7 @@ const defaultTheme = {
     mobileMinWidth: '320px',
     contentWidth: '1440px',
   },
+  remToVw,
 };
 
 export default defaultTheme;

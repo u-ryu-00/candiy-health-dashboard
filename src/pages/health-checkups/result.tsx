@@ -11,12 +11,10 @@ import ResultChart from '../../components/healthCheckups/ResultChart';
 const Notice = styled.p`
   font-size: 2rem;
   font-weight: 500;
-`;
 
-const DashboardWrapper = styled.div`
-  width: 100%;
-  max-height: 50rem;
-  overflow-y: auto;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    font-size: ${({ theme }) => theme.remToVw(2)};
+  }
 `;
 
 export default function HealthCheckupsPage() {
@@ -38,9 +36,7 @@ export default function HealthCheckupsPage() {
         {resultData.patientName}
         님의 건강검진 결과
       </Notice>
-      <DashboardWrapper>
-        <ResultDashboard checkupResultData={resultData} />
-      </DashboardWrapper>
+      <ResultDashboard checkupResultData={resultData} />
       <ResultChart checkupResultData={resultData} />
     </Layout>
   );
