@@ -5,6 +5,18 @@ import { generateId, sortOverviewListByDate } from '../../utils';
 import { EVALUATION_STATUS, CheckupResultData } from '../../types';
 
 const Container = styled.div`
+  width: 100%;
+  min-height: 25rem;
+  max-height: 50rem;
+  overflow-y: auto;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    min-height: ${({ theme }) => theme.remToVw(25)};
+    max-height: ${({ theme }) => theme.remToVw(50)};
+  }
+`;
+
+const Wrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
@@ -149,53 +161,55 @@ export default function ResultDashboard({ checkupResultData }: ResultDashboardPr
 
   return (
     <Container>
-      {sortedOverviewList.map((overview) => (
-        <Card key={generateId()}>
-          <CheckupDate>{overview.checkupDate}</CheckupDate>
-          <ResultList>
-            <ResultItem>
-              <ResultLabel>키/몸무게</ResultLabel>
-              <ResultValue>
-                {overview.height}
-                {' '}
-                <span>{unit?.height}</span>
-                {' / '}
-                {overview.weight}
-                <span>{unit?.weight}</span>
-              </ResultValue>
-            </ResultItem>
-            <ResultItem>
-              <ResultLabel>BMI 수치</ResultLabel>
-              <ResultValue>
-                {overview.BMI}
-                {' '}
-                <span>{unit?.BMI}</span>
-              </ResultValue>
-            </ResultItem>
-            <ResultItem>
-              <ResultLabel>혈압 (수축기/이완기)</ResultLabel>
-              <ResultValue>
-                {overview.bloodPressure}
-                {' '}
-                <span>{unit?.bloodPressure}</span>
-              </ResultValue>
-            </ResultItem>
-            <ResultItem>
-              <ResultLabel>식전혈당</ResultLabel>
-              <ResultValue>
-                {overview.fastingBloodGlucose}
-                {' '}
-                <span>{unit?.fastingBloodGlucose}</span>
-              </ResultValue>
-            </ResultItem>
-          </ResultList>
-          <Evaluation>
-            <Status status={getEvaluationStatus(overview.evaluation)}>
-              {getEvaluationStatus(overview.evaluation)}
-            </Status>
-          </Evaluation>
-        </Card>
-      ))}
+      <Wrapper>
+        {sortedOverviewList.map((overview) => (
+          <Card key={generateId()}>
+            <CheckupDate>{overview.checkupDate}</CheckupDate>
+            <ResultList>
+              <ResultItem>
+                <ResultLabel>키/몸무게</ResultLabel>
+                <ResultValue>
+                  {overview.height}
+                  {' '}
+                  <span>{unit?.height}</span>
+                  {' / '}
+                  {overview.weight}
+                  <span>{unit?.weight}</span>
+                </ResultValue>
+              </ResultItem>
+              <ResultItem>
+                <ResultLabel>BMI 수치</ResultLabel>
+                <ResultValue>
+                  {overview.BMI}
+                  {' '}
+                  <span>{unit?.BMI}</span>
+                </ResultValue>
+              </ResultItem>
+              <ResultItem>
+                <ResultLabel>혈압 (수축기/이완기)</ResultLabel>
+                <ResultValue>
+                  {overview.bloodPressure}
+                  {' '}
+                  <span>{unit?.bloodPressure}</span>
+                </ResultValue>
+              </ResultItem>
+              <ResultItem>
+                <ResultLabel>식전혈당</ResultLabel>
+                <ResultValue>
+                  {overview.fastingBloodGlucose}
+                  {' '}
+                  <span>{unit?.fastingBloodGlucose}</span>
+                </ResultValue>
+              </ResultItem>
+            </ResultList>
+            <Evaluation>
+              <Status status={getEvaluationStatus(overview.evaluation)}>
+                {getEvaluationStatus(overview.evaluation)}
+              </Status>
+            </Evaluation>
+          </Card>
+        ))}
+      </Wrapper>
     </Container>
   );
 }
