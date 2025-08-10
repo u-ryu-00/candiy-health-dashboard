@@ -76,6 +76,6 @@ module.exports = {
     }],
     'jsx-a11y/label-has-associated-control': ['error', { assert: 'either' }],
     'no-shadow': 'off',
-    'react/jsx-props-no-spreading': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
   },
 };

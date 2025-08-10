@@ -17,6 +17,13 @@ const Button = styled.button`
     color: ${(props) => props.theme.color.textActive};
     background: ${(props) => props.theme.color.backgroundLight};
   }
+
+  &:disabled {
+    border: 1px solid ${({ theme }) => theme.color.borderDisabled};
+    color: ${({ theme }) => theme.color.textDisabled};
+    background: ${({ theme }) => theme.color.backgroundDisabled};
+    cursor: default;
+  }
 `;
 
 export default Button;

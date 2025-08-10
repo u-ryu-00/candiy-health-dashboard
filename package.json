@@ -24,6 +24,7 @@
     "@types/node": "^20.2.5",
     "@types/react": "^18.2.7",
     "@types/react-dom": "^18.2.4",
+    "@types/react-modal": "^3.16.3",
     "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^5.59.8",
     "@typescript-eslint/parser": "^5.59.8",
@@ -41,13 +42,17 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.1",
+    "axios": "^1.11.0",
     "dayjs": "^1.11.13",
     "next": "^13.4.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.62.0",
+    "react-modal": "^3.16.3",
     "styled-components": "^5.3.10",
     "styled-reset": "^4.4.7",
-    "zod": "^4.0.15"
+    "uuid": "^11.1.0",
+    "zod": "^4.0.15",
+    "zustand": "^5.0.7"
   }
 }
