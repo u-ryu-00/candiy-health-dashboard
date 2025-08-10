@@ -26,12 +26,21 @@ const Container = styled.div`
   width: 100%;
   border-radius: 0.8rem;
   background: ${({ theme }) => theme.color.backgroundLight};
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    padding: ${({ theme }) => theme.remToVw(2)};
+    border-radius: ${({ theme }) => theme.remToVw(0.8)};
+  }
 `;
 
 const Title = styled.h3`
   font-size: 1.8rem;
   font-weight: 700;
   color: ${({ theme }) => theme.color.textDark};
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    font-size: ${({ theme }) => theme.remToVw(1.8)};
+  }
 `;
 
 const ChartWrapper = styled.div`
@@ -42,6 +51,8 @@ const ChartWrapper = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
     grid-template-columns: 1fr;
+    gap: ${({ theme }) => theme.remToVw(1)};
+    margin-top: ${({ theme }) => theme.remToVw(2)};
   }
 `;
 
@@ -50,6 +61,10 @@ const Chart = styled.div`
   height: 30rem;
   background: #FFFFFF;
   overflow-x: auto;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    height: ${({ theme }) => theme.remToVw(30)};
+  }
 `;
 
 type ResultChartProps = {

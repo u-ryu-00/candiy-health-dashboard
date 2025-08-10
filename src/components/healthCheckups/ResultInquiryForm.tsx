@@ -35,6 +35,13 @@ const Container = styled.form`
   max-width: 50rem;
   border-radius: .8rem;
   background: ${({ theme }) => theme.color.backgroundLight};
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    gap: ${({ theme }) => theme.remToVw(1.6)};
+    padding: ${({ theme }) => theme.remToVw(1.6)};
+    max-width: ${({ theme }) => theme.remToVw(50)};
+    border-radius: ${({ theme }) => theme.remToVw(0.8)};
+  }
 `;
 
 const Field = styled.div`
@@ -43,6 +50,11 @@ const Field = styled.div`
   gap: .8rem;
   width: 100%;
   height: 9rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    gap: ${({ theme }) => theme.remToVw(0.8)};
+    height: ${({ theme }) => theme.remToVw(9)};
+  }
 `;
 
 const Label = styled.label`
@@ -50,6 +62,10 @@ const Label = styled.label`
   font-weight: 400;
   line-height: 1;
   color: ${({ theme }) => theme.color.textDark};
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    font-size: ${({ theme }) => theme.remToVw(1.6)};
+  }
 `;
 
 type InputProps = {
@@ -78,6 +94,12 @@ const Input = styled.input<InputProps>`
       border: 1px solid ${({ theme }) => theme.color.borderError};
     }
   `}
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    font-size: ${({ theme }) => theme.remToVw(1.6)};
+    padding: ${({ theme }) => theme.remToVw(1.1)} ${({ theme }) => theme.remToVw(1.6)};
+    border-radius: ${({ theme }) => theme.remToVw(0.8)};
+  }
 `;
 
 type SelectProps = {
@@ -106,6 +128,12 @@ const Select = styled.select<SelectProps>`
       border: 1px solid ${({ theme }) => theme.color.borderError};
     }
   `}
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    font-size: ${({ theme }) => theme.remToVw(1.6)};
+    padding: ${({ theme }) => theme.remToVw(1.1)} ${({ theme }) => theme.remToVw(1.6)};
+    border-radius: ${({ theme }) => theme.remToVw(0.8)};
+  }
 `;
 
 const ErrorMessage = styled.p`
@@ -113,6 +141,10 @@ const ErrorMessage = styled.p`
   font-weight: 400;
   line-height: 1;
   color: ${({ theme }) => theme.color.textError};
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    font-size: ${({ theme }) => theme.remToVw(1.4)};
+  }
 `;
 
 const Message = styled.p`
@@ -121,10 +153,18 @@ const Message = styled.p`
   line-height: 1;
   text-align: center;
   color: ${({ theme }) => theme.color.textActive};
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    font-size: ${({ theme }) => theme.remToVw(1.4)};
+  }
 `;
 
 const ActionButton = styled(Button)`
   padding: 1.6rem 2.4rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    padding: ${({ theme }) => theme.remToVw(1.6)} ${({ theme }) => theme.remToVw(2.4)};
+  }
 `;
 
 export default function ResultInquiryForm() {

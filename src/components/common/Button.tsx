@@ -24,6 +24,12 @@ const Button = styled.button`
     background: ${({ theme }) => theme.color.backgroundDisabled};
     cursor: default;
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    font-size: ${({ theme }) => theme.remToVw(2.4)};
+    padding: ${({ theme }) => theme.remToVw(5.6)} ${({ theme }) => theme.remToVw(1.6)};
+    border-radius: ${({ theme }) => theme.remToVw(0.8)};
+  }
 `;
 
 export default Button;
