@@ -2,15 +2,19 @@
 
 CANDiY API를 활용한 건강검진 결과 시각화 대시보드 구현
 
-[![CI](https://github.com/u-ryu-00/candiy-health-dashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/u-ryu-00/candiy-health-dashboard/actions/workflows/ci.yml)
-
 ## 0. 배포 링크
 
 - [https://candiy-health-dashboard.vercel.app/](https://candiy-health-dashboard.vercel.app/)
 
-## 1. 기술 스택
+## 1. 주요 기능
 
-### FrontEnd
+- 인증 폼 생성 및 유효성 검사
+- 건강검진 결과 조회 (CANDiY API 연동)
+- 건강검진 결과 시각화
+
+## 2. 기술 스택
+
+### Frontend
 
 - Next.js
 - React
@@ -36,7 +40,7 @@ CANDiY API를 활용한 건강검진 결과 시각화 대시보드 구현
 
 - Vercel
 
-## 2. 프로젝트 실행
+## 3. 프로젝트 실행
 
 ### 의존성 설치
 
@@ -83,7 +87,7 @@ npm run lint
 npm run build
 ```
 
-## 3. 페이지
+## 4. 페이지
 
 - `/` - 서비스 선택
 - `/health-checkups` - 건강검진 결과 조회를 위한 정보 입력
