@@ -6,10 +6,17 @@ import Layout from '../../components/common/Layout';
 import Title from '../../components/common/Title';
 
 import ResultDashboard from '../../components/healthCheckups/ResultDashboard';
+import ResultChart from '../../components/healthCheckups/ResultChart';
 
 const Notice = styled.p`
   font-size: 2rem;
   font-weight: 500;
+`;
+
+const DashboardWrapper = styled.div`
+  width: 100%;
+  max-height: 50rem;
+  overflow-y: auto;
 `;
 
 export default function HealthCheckupsPage() {
@@ -31,7 +38,10 @@ export default function HealthCheckupsPage() {
         {resultData.patientName}
         님의 건강검진 결과
       </Notice>
-      <ResultDashboard checkupResultData={resultData} />
+      <DashboardWrapper>
+        <ResultDashboard checkupResultData={resultData} />
+      </DashboardWrapper>
+      <ResultChart checkupResultData={resultData} />
     </Layout>
   );
 }

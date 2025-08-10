@@ -12,7 +12,7 @@ export function sortOverviewListByDate(overviewList: OverviewList): OverviewList
   const sortedList = [...overviewList].sort((current, next) => {
     const currentDate = dayjs(current.checkupDate).valueOf();
     const nextDate = dayjs(next.checkupDate).valueOf();
-    return nextDate - currentDate;
+    return currentDate - nextDate;
   });
 
   return sortedList;
